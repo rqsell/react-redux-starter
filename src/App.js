@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
+import Cart from "./components/Cart"
+
 import {
   BrowserRouter,
   Switch,
@@ -12,9 +14,16 @@ function App() {
     <BrowserRouter>
     <div className="App">
      <Navbar/>
-     <Home/>
+     {/* <Home/> */}
     </div>
-
+<Switch>
+<Route exact path="/" render={(props) => <Home {...props} />} />
+<Route
+          exact
+          path="/cart"
+          render={(props) => <Cart {...props}  />}
+        />
+</Switch>
     </BrowserRouter>
   );
 }
